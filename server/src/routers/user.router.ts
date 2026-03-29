@@ -9,7 +9,9 @@ export const appRouter = router({
   }),
   getSingleUser: publicProcedure.input(z.object({id: z.string()})).query(async (opts) => {
     console.log(opts)
-  })
+  }),
+
+  // deleteUser: publicProcedure
 });
  
 
