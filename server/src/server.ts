@@ -1,16 +1,24 @@
 import { createHTTPServer } from '@trpc/server/adapters/standalone';
 import { appRouter } from './routers/user.router.ts';
+import cors from "cors";
 
  
 const server = createHTTPServer({
   router: appRouter,
-  basePath: "/trpc/"
-//   createContext() {
-//     return {};
-//   },
+  basePath: "/trpc/",
+  middleware: cors({
+    origin: "http://localhost:3000"
+  }),
+  createContext() {
+    return {};
+  },
 })
 
 
 server.listen(4000, () => {
     console.log('server is running');
 })
+
+
+
+

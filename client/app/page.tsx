@@ -2,7 +2,7 @@
 import { trpc } from "@/trpc/TrpcProvider";
 
 export default function Home() {
-  const { data } = trpc.getDate.useQuery();
+  const { data } = trpc.getSingleUser.useQuery({ id: "1" });
   console.log(data);
 
   return <>lsdnjfk</>;
